@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SbsLib;
 using SbsWeb.Models;
 
 namespace SbsWeb.Controllers
@@ -20,7 +21,8 @@ namespace SbsWeb.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var b = new Board("Tst","Tst");
+            return View(b);
         }
 
         public IActionResult Privacy()

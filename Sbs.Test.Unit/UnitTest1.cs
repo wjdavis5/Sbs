@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -8,6 +9,17 @@ namespace SbsLib.Test.Unit
     public class UnitTest1
     {
         public const string TotallyRandomTextValue = "TotallyRandomTextValue";
+
+        [TestMethod]
+        public void Test_Printing()
+        {
+            var b = new Board(TotallyRandomTextValue,TotallyRandomTextValue);
+            foreach (var number in b.RowNumbers)
+            {
+                Console.Write($"|   {number}   |");
+            }
+        }
+
         [TestMethod]
         public void Generate_Numbers_Returns_Array()
         {

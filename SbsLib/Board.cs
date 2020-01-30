@@ -19,7 +19,6 @@ namespace SbsLib
         #region Privates
         private int NumRows { get; }
         private int NumCols { get; }
-        private Square[,] BoardArr { get; }
         #endregion
 
         public Board(string rowLabel, string colLabel) : this()
@@ -29,9 +28,9 @@ namespace SbsLib
         }
         private Board()
         {
+            Squares = new List<Square>();
             NumCols = 10;
             NumRows = 10;
-            BoardArr = new Square[NumCols, NumRows];
             SetupBoard();
         }
 
@@ -39,12 +38,12 @@ namespace SbsLib
         {
             RowNumbers = GenerateNumbers();
             ColNumbers = GenerateNumbers();
-            for (var row = 0; row < RowNumbers.Length - 1; row++)
+            var squareNumber = 1;
+            for (var row = 0; row < RowNumbers.Length; row++)
             {
-                for (var col = 0; col < ColNumbers.Length - 1; col++)
+                for (var col = 0; col < ColNumbers.Length; col++)
                 {
-                    var square = new Square(RowNumbers[row], ColNumbers[col]);
-                    BoardArr[row, col] = square;
+                    var square = new Square(squareNumber++, this, RowNumbers[row], ColNumbers[col]);
                     Squares.Add(square);
                 }
             }
