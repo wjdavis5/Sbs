@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SbsLib
+namespace SbsWeb.Data
 {
     public class Owner
     {

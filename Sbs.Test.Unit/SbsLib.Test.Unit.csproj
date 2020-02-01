@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SbsLib\SbsLib.csproj" />
+    <ProjectReference Include="..\SbsWeb\SbsWeb.csproj" />
   </ItemGroup>
 
 </Project>

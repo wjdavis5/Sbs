@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SbsLib
+namespace SbsWeb.Data
 {
     public static class BoardSettings
     {

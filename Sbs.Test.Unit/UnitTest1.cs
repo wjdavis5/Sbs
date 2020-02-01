@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SbsWeb.Data;
 
 namespace SbsLib.Test.Unit
 {
