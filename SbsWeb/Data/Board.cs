@@ -13,6 +13,7 @@ namespace SbsWeb.Data
         public ICollection<Square> Squares { get; set; }
         public virtual Owner Owner { get; set; }
         public long OwnerId { get; set; }
+        public bool IsPublic { get; set; }
 
         public string RowLabel { get; private set; }
         public string ColLabel { get; private set; }

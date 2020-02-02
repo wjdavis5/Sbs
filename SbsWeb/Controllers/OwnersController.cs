@@ -23,7 +23,6 @@ namespace SbsWeb.Controllers
         // GET: Owners
         public async Task<IActionResult> Index()
         {
-            //emails, givenname surname
             var claimEmail = HttpContext.User.FindFirst("emails").Value;
             var claimGivenName = HttpContext.User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname").Value;
             var claimSurName = HttpContext.User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname").Value;
@@ -34,11 +33,11 @@ namespace SbsWeb.Controllers
                 await _context.Owners.AddAsync(owner);
                 await _context.SaveChangesAsync();
             }
-            else
+            else if(owner.SurName != claimSurName || owner.GivenName != claimGivenName)
             {
                 owner.SurName = claimSurName;
                 owner.GivenName = claimGivenName;
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync().ConfigureAwait(false);
             }
             return View(owner);
         }

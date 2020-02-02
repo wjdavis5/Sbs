@@ -2,10 +2,22 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-</style>
+<div class="jumbotron">
+    <div class="container">
+        <h1 clas="display-3">Fundraise with Squares</h1>
+        <p>
+            Kickstart your fundraising efforts with Squares. Squares takes <b>SuperBowl Squares</b> to the next level!<br/> 
+            We handle collecting payments and automatically mark selections paid for, so you dont have to worry about collecting from users yourself.
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Start Fundraising</h2>
+            <p>Start your fundraiser today by signing in!</p>
+            <p><a class="btn btn-primary btn-lg" asp-area="AzureADB2C" asp-controller="Account" asp-action="SignIn">Start!</a></p>
+        </div>
+    </div>
+</div>
 

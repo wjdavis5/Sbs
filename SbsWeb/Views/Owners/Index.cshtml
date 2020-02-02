@@ -1,4 +1,4 @@
-﻿@model SbsWeb.Data.Owner
+﻿@model SbsWeb.Models.OwnerViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -8,10 +8,10 @@
 
 
 
-@if (Model.Boards.Any())
+@if (Model.HasBoards)
 {
     <h1>Your Boards</h1>
-    @await Html.PartialAsync("OwnerBoardListView", Model.Boards)
+    @await Html.PartialAsync("OwnerBoardListView", Model.Owner.Boards)
 }
 else
 {
