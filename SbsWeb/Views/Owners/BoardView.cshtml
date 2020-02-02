@@ -1,0 +1,32 @@
+﻿@model SbsWeb.Data.Board
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <hr />
+    <table>
+        @{
+            var location = 0;
+        }
+        <tr>
+            <td>
+            </td>
+            @foreach (var n in Model.ColNumbers)
+            {
+                <td>@n</td>
+            }
+        </tr>
+        @for (var x = 0; x < Model.RowNumbers.Length; x++)
+        {
+            <tr>
+                <td>@Model.RowNumbers[x]</td>
+                @for (var y = 0; y < Model.ColNumbers.Length; y++)
+                {
+                    <td>@Model.Squares.ToList()[location++]</td>
+                }
+
+            </tr>
+        }
+    </table>
+</div>

@@ -14,7 +14,7 @@ namespace SbsLib.Test.Unit
         [TestMethod]
         public void Test_Printing()
         {
-            var b = new Board(TotallyRandomTextValue,TotallyRandomTextValue);
+            var b = new Board(TotallyRandomTextValue,TotallyRandomTextValue,TotallyRandomTextValue);
             foreach (var number in b.RowNumbers)
             {
                 Console.Write($"|   {number}   |");
@@ -24,7 +24,7 @@ namespace SbsLib.Test.Unit
         [TestMethod]
         public void Generate_Numbers_Returns_Array()
         {
-            var b = new Board(TotallyRandomTextValue, TotallyRandomTextValue);
+            var b = new Board(TotallyRandomTextValue, TotallyRandomTextValue,TotallyRandomTextValue);
             for (int i = 0; i < 1000; i++)
             {
                 var result = b.GenerateNumbers();
@@ -35,7 +35,7 @@ namespace SbsLib.Test.Unit
         [TestMethod]
         public void Generate_Numbers_Returns_Array_With_Each_Number_Used_Only_Once()
         {
-            var b = new Board(TotallyRandomTextValue, TotallyRandomTextValue);
+            var b = new Board(TotallyRandomTextValue, TotallyRandomTextValue,TotallyRandomTextValue);
             for (int i = 0; i < 1000; i++)
             {
                 var result = b.GenerateNumbers();

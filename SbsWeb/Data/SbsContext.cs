@@ -15,7 +15,10 @@ namespace SbsWeb.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Square>()
+            modelBuilder.Entity<Owner>()
+                .HasIndex(owner => owner.EmailAddress);
+
+                modelBuilder.Entity<Square>()
                 .HasOne<Board>(s => s.Board)
                 .WithMany(board => board.Squares)
                 .HasForeignKey(square => square.BoardId)

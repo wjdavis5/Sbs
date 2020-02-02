@@ -9,6 +9,7 @@ namespace SbsWeb.Data
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+        public string Name { get; set; }
         public ICollection<Square> Squares { get; set; }
         public virtual Owner Owner { get; set; }
         public long OwnerId { get; set; }
@@ -56,10 +57,11 @@ namespace SbsWeb.Data
         private int NumCols { get; }
         #endregion
 
-        public Board(string rowLabel, string colLabel) : this()
+        public Board(string rowLabel, string colLabel, string name) : this()
         {
             RowLabel = rowLabel;
             ColLabel = colLabel;
+            Name = name;
         }
         private Board()
         {

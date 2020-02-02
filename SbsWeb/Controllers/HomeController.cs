@@ -11,7 +11,6 @@ using SbsWeb.Models;
 
 namespace SbsWeb.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -23,8 +22,7 @@ namespace SbsWeb.Controllers
 
         public IActionResult Index()
         {
-            var b = new Board("Tst","Tst");
-            return View(b);
+            return View();
         }
 
         public IActionResult Privacy()

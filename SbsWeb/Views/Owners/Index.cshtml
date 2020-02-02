@@ -1,0 +1,22 @@
+﻿@model SbsWeb.Data.Owner
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Create Board</h1>
+
+
+
+@if (Model.Boards.Any())
+{
+    <h1>Your Boards</h1>
+    @await Html.PartialAsync("OwnerBoardListView", Model.Boards)
+}
+else
+{
+    <h1>You dont have any boards! Create one now!</h1>
+}
+
+
+
